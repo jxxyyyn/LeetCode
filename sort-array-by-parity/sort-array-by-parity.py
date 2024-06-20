@@ -5,11 +5,13 @@ class Solution(object):
         :rtype: List[int]
         """
         
-        i = 0
-        for j in range(1,len(nums)) :
-            if nums[i] % 2 == 1 and nums[j] % 2 == 0 :
-                nums[i], nums[j] = nums[j], nums[i]
+        i, j = 0, len(nums)-1
+        
+        while i<=j :
             if nums[i] % 2 == 0:
                 i += 1
-        
+            else: 
+                nums[i], nums[j] = nums[j], nums[i]
+                j -= 1
         return nums
+        
