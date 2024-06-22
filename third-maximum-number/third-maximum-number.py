@@ -5,15 +5,7 @@ class Solution(object):
         :rtype: int
         """
         
-        nums.sort()
-        
-        i = 0
-        while i < len(nums) - 1 :
-            if nums[i] == nums[i+1]:
-                del nums[i]
-            else:
-                i += 1
-        
+        nums = list(set(nums))
         nums.sort(reverse=True)
         
         if len(nums) < 3:
